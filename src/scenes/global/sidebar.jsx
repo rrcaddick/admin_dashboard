@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Sidebar as ProSideBar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -110,10 +110,21 @@ const Sidebar = () => {
           )}
           {/* Menu Items */}
           <Box paddingLeft={!collapsed && "10%"}>
-            <Typography variant="h6" color={colors.grey[300]} sx={{ m: "15px 0 5px 20px" }}>
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: !collapsed ? "15px 0 5px 20px" : "15px 0 5px 0", textAlign: collapsed && "center" }}
+            >
               Manage
             </Typography>
             <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: !collapsed ? "15px 0 5px 20px" : "15px 0 5px 0", textAlign: collapsed && "center" }}
+            >
+              Data
+            </Typography>
             <Item
               title="Manage Team"
               to="/team"
@@ -121,9 +132,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography variant="h6" color={colors.grey[300]} sx={{ m: "15px 0 5px 20px" }}>
-              Data
-            </Typography>
             <Item
               title="Contacts Information"
               to="/contacts"
@@ -138,7 +146,11 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography variant="h6" color={colors.grey[300]} sx={{ m: "15px 0 5px 20px" }}>
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: !collapsed ? "15px 0 5px 20px" : "15px 0 5px 0", textAlign: collapsed && "center" }}
+            >
               Pages
             </Typography>
             <Item
@@ -162,7 +174,11 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography variant="h6" color={colors.grey[300]} sx={{ m: "15px 0 5px 20px" }}>
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: !collapsed ? "15px 0 5px 20px" : "15px 0 5px 0", textAlign: collapsed && "center" }}
+            >
               Charts
             </Typography>
             <Item
