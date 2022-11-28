@@ -1,5 +1,5 @@
-import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
+import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
 
@@ -63,20 +63,6 @@ const BarChart = ({ isDashboard }) => {
           rotation: -45,
           lineWidth: 6,
           spacing: 10,
-        },
-      ]}
-      fill={[
-        {
-          match: {
-            id: "fries",
-          },
-          id: "dots",
-        },
-        {
-          match: {
-            id: "sandwich",
-          },
-          id: "lines",
         },
       ]}
       borderColor={{
