@@ -51,31 +51,33 @@ const GeographyChart = ({ isDashboard }) => {
       borderWidth={1.5}
       borderColor="##fff"
       legends={
-        !isDashboard && [
-          {
-            anchor: "bottom-left",
-            direction: "column",
-            justify: true,
-            translateX: 20,
-            translateY: -100,
-            itemsSpacing: 0,
-            itemWidth: 94,
-            itemHeight: 18,
-            itemDirection: "left-to-right",
-            itemTextColor: colors.grey[100],
-            itemOpacity: 0.85,
-            symbolSize: 18,
-            effects: [
+        isDashboard
+          ? undefined
+          : [
               {
-                on: "hover",
-                style: {
-                  itemTextColor: "#fff",
-                  itemOpacity: 1,
-                },
+                anchor: "bottom-left",
+                direction: "column",
+                justify: true,
+                translateX: 20,
+                translateY: -100,
+                itemsSpacing: 0,
+                itemWidth: 94,
+                itemHeight: 18,
+                itemDirection: "left-to-right",
+                itemTextColor: colors.grey[100],
+                itemOpacity: 0.85,
+                symbolSize: 18,
+                effects: [
+                  {
+                    on: "hover",
+                    style: {
+                      itemTextColor: "#fff",
+                      itemOpacity: 1,
+                    },
+                  },
+                ],
               },
-            ],
-          },
-        ]
+            ]
       }
     />
   );
